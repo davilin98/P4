@@ -15,7 +15,7 @@ cleanup() {
 }
 
 if [[ $# != 5 ]]; then
-   echo "$0 lpc_order input.wav output.lp"
+   echo "$0 order nfilt fs input.wav output.mfcc"
    exit 1
 fi
 

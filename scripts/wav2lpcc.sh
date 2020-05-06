@@ -15,7 +15,7 @@ cleanup() {
 }
 
 if [[ $# != 4 ]]; then
-   echo "$0 lpc_order input.wav output.lp"
+   echo "$0 order_lpc order_cep input.wav output.lpcc"
    exit 1
 fi
 
