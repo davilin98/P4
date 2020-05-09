@@ -20,8 +20,8 @@ db=spk_8mu/speecon
 nfilt_mfcc=20
 mfcc_order=12
 order_lpc=8
-order_lpcc=25
-order_lpcc_cep=25
+order_lpcc=10
+order_lpcc_cep=15
 # ------------------------
 # Usage
 # ------------------------

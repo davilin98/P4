@@ -15,7 +15,7 @@ cleanup() {
 }
 
 if [[ $# != 5 ]]; then
-   echo "$0 lpc_order nfilter fs input.wav output.lp"
+   echo "$0 order nfilt fs input.wav output.mfcc"
    exit 1
 fi
 
@@ -45,10 +45,10 @@ fi
 
 # Main command for feature extration
 sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
-	$LPC -l 240 -m $lpc_order | $MFCC -s $fs -m $order -n $nfilt -l 200  > $base.mfcc
+	 $MFCC -s $fs -m $order -n $nfilt -l 200  > $base.mfcc
 
 # Our array files need a header with the number of cols and rows:
-ncol=$((order+1)) 
+ncol=$((order+1)) # lpc p =>  (gain a1 a2 ... ap) 
 nrow=`$X2X +fa < $base.mfcc | wc -l | perl -ne 'print $_/'$ncol', "\n";'`
 
 # Build fmatrix file by placing nrow and ncol in front, and the data after them
