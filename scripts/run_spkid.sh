@@ -22,6 +22,9 @@ mfcc_order=12
 order_lpc=8
 order_lpcc=10
 order_lpcc_cep=15
+thr=0.001
+nmixtures=8
+gmm_ini=1 
 # ------------------------
 # Usage
 # ------------------------
@@ -101,7 +104,7 @@ compute_lp() {
 compute_lpcc() {
     for filename in $(cat $lists/class/all.train $lists/class/all.test); do
         mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
-        EXEC="wav2lpcc $order_lpcc $order_lpcc_cep $db/$filename.wav $w/$FEAT/$filename.$FEAT"
+        EXEC="wav2lpcc  $order_lpcc $order_lpcc_cep $db/$filename.wav $w/$FEAT/$filename.$FEAT"
         echo $EXEC && $EXEC || exit 1
     done
 }
@@ -114,7 +117,7 @@ compute_mfcc() {
     done
 }
 
-
+# \ HECHO
 
 #  Set the name of the feature (not needed for feature extraction itself)
 if [[ ! -v FEAT && $# > 0 && "$(type -t compute_$1)" = function ]]; then
@@ -167,7 +170,11 @@ for cmd in $*; do
 	   # Implement 'trainworld' in order to get a Universal Background Model for speaker verification
 	   #
 	   # - The name of the world model will be used by gmm_verify in the 'verify' command below.
-       echo "Implement the trainworld option ..."
+        #echo $name ----
+        #  gmm_train  -v 1 -T 0.001 -N5 -m 1 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/$name.gmm $lists/class/$name.train || exit 1
+           gmm_train  -v 1 -T $thr -N5 -m $nmixtures -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
+        #echo
+      # echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
        ## @file
 	   # \TODO 

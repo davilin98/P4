@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Build started at 2020-05-08T12:03:32.248386
+=======
+Build started at 2020-05-07T16:44:48.116320
+>>>>>>> 256ab9483489f5cd7bc4a1972a3360ba7b170267
 Main binary: /usr/bin/python3
 Python system: Linux
 The Meson build system
