@@ -31,7 +31,7 @@ if [[ $UBUNTU_SPTK == 1 ]]; then
    FRAME="sptk frame"
    WINDOW="sptk window"
    LPC="sptk lpc"
-   LPCC="sptk lpc2c"
+   LPC2C="sptk lpc2c"
   
 else
    # or install SPTK building it from its source
@@ -39,12 +39,12 @@ else
    FRAME="frame"
    WINDOW="window"
    LPC="lpc"
-   LPCC ="lpc2c"
+   LPC2C ="lpc2c"
 fi
 
 # Main command for feature extration
 sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
-	$LPC -l 240 -m $order_lpc  | $LPCC -m $order_lpc -M $order_cep > $base.lpcc
+	$LPC -l 240 -m $order_lpc  | $LPC2C -m $order_lpc -M $order_cep > $base.lpcc
 
 # Our array files need a header with the number of cols and rows:
 ncol=$((order_cep+1)) # lpc p =>  (gain a1 a2 ... ap) 
