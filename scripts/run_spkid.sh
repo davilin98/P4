@@ -18,7 +18,7 @@ name_exp=one
 db=spk_8mu/speecon
 
 nfilt_mfcc=20
-mfcc_order=13
+mfcc_order=16
 order_lpc=8
 order_lpcc=16
 order_lpcc_cep=20
@@ -112,7 +112,7 @@ compute_lpcc() {
 compute_mfcc() {
     for filename in $(cat $lists/class/all.train $lists/class/all.test); do
         mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
-        EXEC="wav2mfcc $mfcc_order $nfilt_mfcc  $db/$filename.wav $w/$FEAT/$filename.$FEAT"
+        EXEC="wav2mfcc $mfcc_order $db/$filename.wav $w/$FEAT/$filename.$FEAT"
         echo $EXEC && $EXEC || exit 1
     done
 }
