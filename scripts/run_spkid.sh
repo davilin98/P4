@@ -172,7 +172,7 @@ for cmd in $*; do
 	   #
 	   # - The name of the world model will be used by gmm_verify in the 'verify' command below.
         #echo $name ----
-       gmm_train  -v 1 -T 0.001 -N5 -m 8 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
+       gmm_train  -v 1 -T 0.0001 -n 40 -m 40 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
         #echo
        echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
