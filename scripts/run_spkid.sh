@@ -172,9 +172,9 @@ for cmd in $*; do
 	   #
 	   # - The name of the world model will be used by gmm_verify in the 'verify' command below.
         #echo $name ----
-       gmm_train  -v 1 -T 0.0001 -n 40 -m 40 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
+       gmm_train  -v 1 -T 0.0001 -m 40 -m 50 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
         #echo
-       echo "Implement the trainworld option ..."
+      # echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
        ## @file
 	   # \TODO 
@@ -187,14 +187,14 @@ for cmd in $*; do
        gmm_verify -d $w/$FEAT -e $FEAT -D $w/gmm/$FEAT -E gmm -w world $lists/gmm.list $lists/verif/all.test $lists/verif/all.test.candidates > $w/verif_${FEAT}_${name_exp}.log || exit 1
       # echo "Implement the verify option ..."
 
-   elif [[ $cmd == verif_err ]]; then
+   elif [[ $cmd == verifyerr ]]; then
        if [[ ! -s $w/verif_${FEAT}_${name_exp}.log ]] ; then
           echo "ERROR: $w/verif_${FEAT}_${name_exp}.log not created"
           exit 1
        fi
        # You can pass the threshold to spk_verif_score.pl or it computes the
        # best one for these particular results.
-       spk_verif_score.pl $w/verif_${FEAT}_${name_exp}.log | tee $w/verif_${FEAT}_${name_exp}.res
+       spk_verif_score $w/verif_${FEAT}_${name_exp}.log | tee $w/verif_${FEAT}_${name_exp}.res
 
    elif [[ $cmd == finalclass ]]; then
        ## @file
