@@ -65,6 +65,7 @@ ejercicios indicados.
   para una señal de prueba.
   >LP:
   
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lp_bona.PNG)
   
   >LPCC:
   
