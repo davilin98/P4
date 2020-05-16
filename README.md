@@ -90,9 +90,12 @@ ejercicios indicados.
   | &rho;<sub>x</sub>[2,3] |-0.872|0.1484|0.1705|
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
-  
+  > Los coeficientes de Pearson van de [-1,1] y nos sirven para medir el nivel de correlación que hay entre una serie de datos.
+  > Los valores del Pearson nos corroboran lo que comentabamos anteriormente ya que contra más pequeño sea el valor, mayor incorrelacion en los datos. Aunque nos sorprende que el valor de LPCC sea inferior al del MFCC. 
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
-
+> El objetivo para el número de coeficientes es poder obtener los parámetros más importantes de la voz con el menor número de coeficientes. 
+> Nº de coeficientes para el LPCC entre 8 y 12
+> Nº de coeficientes para el MFCC entre 13 y 16.
 ### Entrenamiento y visualización de los GMM.
 
 Complete el código necesario para entrenar modelos GMM.
