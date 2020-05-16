@@ -76,14 +76,18 @@ ejercicios indicados.
   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion_bo.png)
   
   + ¿Cuál de ellas le parece que contiene más información?
-  > Observando las graficas podríamos decir que LPCC y MFCC contienen más información, ya que estan menos correlados.
-
+  > Observando las graficas podríamos decir que LPCC y MFCC contienen más información ya que son una nube bastante dispersa a causa de que estan menos correlados, es decir, con una componente, nos cuesta más saber el valor de la otra.  
+  > En cambio, en el lp si que se puede deducir el valor de un coeficiente conociendo el otro y entonces, uno de ellos aporta muy poca información. 
+  > Si tuvieramos que quedarnos con una gráfica, eligiriamos el del MFCC porque es donde mayor dispersión se observa. 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3, y rellene la tabla siguiente con los valores obtenidos.
+  
+  > Para el uso del programa Pearson hemos usado este comando : pearson work/$name/BLOCK01/SES017/*$name
+  Donde $name indica si queremos lp, lpcc o mfcc
 
   |                        | LP   | LPCC | MFCC |
   |------------------------|:----:|:----:|:----:|
-  | &rho;<sub>x</sub>[2,3] |      |      |      |
+  | &rho;<sub>x</sub>[2,3] |-0.872|0.1484|0.1705|
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
   
