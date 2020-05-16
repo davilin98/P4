@@ -126,6 +126,12 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
   |                        | LP   | LPCC | MFCC |
   |------------------------|:----:|:----:|:----:|
   | Tasa de error (%)      |11.08 |3.82  |1.66  |
+  
+  > Los parámetros que hemos usado son :
+  
+  > LP = 8 coeficientes; LPCC = 20 coeficientes , 20 coef.cepstrales ; MFCC = 16 coeficientes
+  
+  > Hemos usado lo siguiente para el GMM : Thershold = 0.00001 ; Iteraciones = 40 ; Guassianas = 40 ; Método de inicialización = aleatorio
 
 ### Verificación del locutor.
 
@@ -138,9 +144,9 @@ Complete el código necesario para realizar verificación del locutor y optimice
   
   > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes. 
   
-                    |Missed| False Alarm | MFCC |
-                    |:----:|:-----------:|:----:|
-                    |23/250|     2/1000  |0.1705|
+             |      |Missed| False Alarm | Umbral | Cost Detection |
+             |------|:----:|:-----------:|:------:|:---------------|
+             | MFCC |38/250|     1/1000  |0.623   |       25,1     |
  
 ### Test final y trabajo de ampliación.
 
