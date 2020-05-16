@@ -129,7 +129,7 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
   
   > Los parámetros que hemos usado son :
   
-  > LP = 8 coeficientes; LPCC = 20 coeficientes , 20 coef.cepstrales ; MFCC = 16 coeficientes
+  > LP = 8 coeficientes; LPCC = 8 coeficientes , 12 coef.cepstrales ; MFCC = 16 coeficientes
   
   > Hemos usado lo siguiente para el GMM : Thershold = 0.00001 ; Iteraciones = 40 ; Guassianas = 40 ; Método de inicialización = aleatorio
 
