@@ -111,6 +111,10 @@ Complete el código necesario para entrenar modelos GMM.
   
   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses015_ses220.png)
   
+  > En esta imagen podemos observar, la gráfica de la funcion de densidad de los locutores SE0015 (en rojo arriba) y SE220 (en azul abajo), también se muestra la poblacion de los dos locutores. La población roja pertenece al locutor SE0015 y la azul al SE220. 
+  > Se puede apreciar notariamente la diferencia entre las funciones de densidad de los locutores ya que tienen una formba bastante distinta. 
+  > En la población las diferencias son menores pero se observa que cuando la función de densidad de un locutor es distinta a la población de este, podemos ver que muchas muestras no estan donde indica que deberia estar la función de densidad. Esto nos permite diferenciar a los locutores.
+  > También comentar que la mayor densidad de probabilidad es en la parte central inferior de las gráficas ya que corresponde a los silencios, los cuales no pertenecen a ninguno de los locutores. 
 
 ### Reconocimiento del locutor.
 
@@ -118,6 +122,10 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
 
 - Inserte una tabla con la tasa de error obtenida en el reconocimiento de los locutores de la base de datos
   SPEECON usando su mejor sistema de reconocimiento para los parámetros LP, LPCC y MFCC.
+
+  |                        | LP   | LPCC | MFCC |
+  |------------------------|:----:|:----:|:----:|
+  | Tasa de error (%)      |11.08 |3.82  |1.66  |
 
 ### Verificación del locutor.
 
@@ -127,6 +135,12 @@ Complete el código necesario para realizar verificación del locutor y optimice
   de verificación de SPEECON. La tabla debe incluir el umbral óptimo, el número de falsas alarmas y de
   pérdidas, y el score obtenido usando la parametrización que mejor resultado le hubiera dado en la tarea
   de reconocimiento.
+  
+  > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes. 
+  
+                    |Missed| False Alarm | MFCC |
+                    |:----:|:-----------:|:----:|
+                    |23/250|     2/1000  |0.1705|
  
 ### Test final y trabajo de ampliación.
 
