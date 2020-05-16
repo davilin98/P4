@@ -65,15 +65,15 @@ ejercicios indicados.
   para una señal de prueba.
   >LP:
   
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lp_bona.PNG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lp_dispersion.png)
   
   >LPCC:
   
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lpcc_dispersion.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lpcc_dispersion.png)
   
   >MFCC:
   
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion_bo.png)
   
   + ¿Cuál de ellas le parece que contiene más información?
   > Observando las graficas podríamos decir que LPCC y MFCC contienen más información, ya que estan menos correlados.
