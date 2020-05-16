@@ -144,6 +144,8 @@ Complete el código necesario para realizar verificación del locutor y optimice
   
             
    > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes.
+   
+   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/cost.PNG)
  
 ### Test final y trabajo de ampliación.
 
