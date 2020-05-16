@@ -145,6 +145,8 @@ Complete el código necesario para realizar verificación del locutor y optimice
             
    > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes.
    
+   > Hemos usado un umbral de 0.0001, 40 iteraciones y 50 gaussianas. 
+   
    ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/cost.PNG)
  
 ### Test final y trabajo de ampliación.
