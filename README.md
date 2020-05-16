@@ -111,9 +111,12 @@ Complete el código necesario para entrenar modelos GMM.
   
   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses015_ses220.png)
   
-  > En esta imagen podemos observar, la gráfica de la funcion de densidad de los locutores SE0015 (en rojo arriba) y SE220 (en azul abajo), también se muestra la poblacion de los dos locutores. La población roja pertenece al locutor SE0015 y la azul al SE220. 
-  > Se puede apreciar notariamente la diferencia entre las funciones de densidad de los locutores ya que tienen una formba bastante distinta. 
-  > En la población las diferencias son menores pero se observa que cuando la función de densidad de un locutor es distinta a la población de este, podemos ver que muchas muestras no estan donde indica que deberia estar la función de densidad. Esto nos permite diferenciar a los locutores.
+  > En esta imagen podemos observar, la gráfica de la función de densidad de los locutores SE0015 (en rojo arriba) y SE220 (en azul abajo), también se muestra la poblacion de los dos locutores. La población roja pertenece al locutor SE0015 y la azul al SE220. 
+  
+  > Se puede apreciar notariamente la diferencia entre las funciones de densidad de los locutores ya que tienen una forma bastante distinta. 
+  
+  > En la población las diferencias son menores pero se observa que cuando la función de densidad de un locutor es distinta a la población de este, observamos muchas muestras que no estan donde la función de densidad indica. Esto nos permite diferenciar a los locutores.
+  
   > También comentar que la mayor densidad de probabilidad es en la parte central inferior de las gráficas ya que corresponde a los silencios, los cuales no pertenecen a ninguno de los locutores. 
 
 ### Reconocimiento del locutor.
@@ -144,6 +147,8 @@ Complete el código necesario para realizar verificación del locutor y optimice
   
             
    > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes.
+   
+   > Hemos usado un umbral de 0.0001, 40 iteraciones y 50 gaussianas. 
    
    ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/cost.PNG)
  
