@@ -201,7 +201,15 @@ for cmd in $*; do
 	   # Perform the final test on the speaker classification of the files in spk_ima/sr_test/spk_cls.
 	   # The list of users is the same as for the classification task. The list of files to be
 	   # recognized is lists/final/class.test
-       echo "To be implemented ..."
+     
+
+     for filename in $(cat $lists/final/class.train $lists/final/class.test); do
+            mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
+            EXEC="wav2mfcc  $mfcc_order spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
+            echo $EXEC && $EXEC || exit 1
+        done
+
+        gmm_classify -d $w/$FEAT -e $FEAT -D $w/gmm/$FEAT -E gmm $lists/gmm.list  $lists/final/class.test | tee $w/class_test.log
    
    elif [[ $cmd == finalverif ]]; then
        ## @file
@@ -210,8 +218,14 @@ for cmd in $*; do
 	   # The list of legitimate users is lists/final/verif.users, the list of files to be verified
 	   # is lists/final/verif.test, and the list of users claimed by the test files is
 	   # lists/final/verif.test.candidates
-       echo "To be implemented ..."
-   
+       
+   for filename in $(cat $lists/final/verif.test); do
+            mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
+            EXEC="wav2mfcc $mfcc_order spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
+            echo $EXEC && $EXEC || exit 1
+        done
+
+     gmm_verify -d $w/$FEAT -e $FEAT -D $w/gmm/$FEAT -w world -E gmm $lists/gmm.list $lists/final/verif.test $lists/final/verif.test.candidates | tee $w/verif_test.log
    # If the command is not recognize, check if it is the name
    # of a feature and a compute_$FEAT function exists.
    elif [[ "$(type -t compute_$cmd)" = function ]]; then
