@@ -63,12 +63,15 @@ ejercicios indicados.
 
 - Inserte una imagen mostrando la dependencia entre los coeficientes 2 y 3 de las tres parametrizaciones
   para una señal de prueba.
+  >LP:
+  
   >LPCC:
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/prediccion_lpcc.JPG)
-  >MFCC
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/prediccion_mfcc.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lpcc_dispersion.JPG)
+  >MFCC:
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion.JPG)
   
   + ¿Cuál de ellas le parece que contiene más información?
+  > Observando las graficas podríamos decir que LPCC y MFCC contienen más información, ya que estan menos correlados.
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3, y rellene la tabla siguiente con los valores obtenidos.
