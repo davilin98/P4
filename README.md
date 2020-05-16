@@ -54,19 +54,19 @@ ejercicios indicados.
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/pipeline_lpcc.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/pipeline_lpcc.JPG)
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en
   su fichero <code>scripts/wav2mfcc.sh</code>:
-    ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/pipeline_mfcc.JPG)
+    ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/pipeline_mfcc.JPG)
 
 ### Extracción de características.
 
 - Inserte una imagen mostrando la dependencia entre los coeficientes 2 y 3 de las tres parametrizaciones
   para una señal de prueba.
   >LPCC:
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/prediccion_lpcc.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/prediccion_lpcc.JPG)
   >MFCC
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/prediccion_mfcc.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/prediccion_mfcc.JPG)
   
   + ¿Cuál de ellas le parece que contiene más información?
 
