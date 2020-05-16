@@ -103,9 +103,15 @@ Complete el código necesario para entrenar modelos GMM.
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
   para sus dos primeros coeficientes de MFCC.
   
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses015.png)
+  
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
   del modelado GMM para diferenciar las señales de uno y otro.
+  
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses015_pob.png)
+  
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses220_pob.png)
 
 ### Reconocimiento del locutor.
 
