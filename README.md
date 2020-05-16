@@ -31,22 +31,42 @@ ejercicios indicados.
 
 - Analice el script `wav2lp.sh` y explique la misión de los distintos comandos, y sus opciones, involucrados
   en el *pipeline* principal (`sox`, `$X2X`, `$FRAME`, `$WINDOW` y `$LPC`).
+  > Sox: Genera una señal de un cierto formato a partir de otra señal con un formato distinto, es decir, te permite canviar de formato una señal.
+  
+  > x2x: Te permite convertir los datos a distintos formatos.
+  
+  > Frame: La usamos para dividir las señales en tramas de 'n' muestras y con un desplazamiento de ventana 'm'. Ejemplo comando: sptk frame -l n -p m.
+  
+  >Window: multiplica las tramas usadas por la ventana de Blackman. Para indicar la longitud de muestras de la ventana usamos sptk window -l n. Siendo n el numero de muestras.
+  
+  > lpc: Principalmente calcula el num de coeficientes (lpc_order) primeros de predicción lineal.
+  
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros
   de salida de SPTK (líneas 41 a 47 del script `wav2lp.sh`).
+  
+  >Primeramente (linea 42-43) se usan todos los comandos analizados anteriormente para procesar la señal '.wav' obteniendo los coeficientes de la predicción lineal que se almacenan en base.lp.
+  
+  >Seguidamente (lineas 46-47) se define el numero de columnas y el numero de filas. Principalmente lo que hacemos es almacenar en cada columna los diferentes coeficientes calculados de la predicción lineal de cada trama de la señal (que es cada fila). Por lo tanto se define el número de filas como el número de tramas de la señal.
 
   * ¿Por qué es conveniente usar este formato (u otro parecido)?
+  > De esta manera obtenemos los datos ordenados y podemos operar con ellos facilmente.
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
-
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/pipeline_lpcc.JPG)
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en
   su fichero <code>scripts/wav2mfcc.sh</code>:
+    ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/pipeline_mfcc.JPG)
 
 ### Extracción de características.
 
 - Inserte una imagen mostrando la dependencia entre los coeficientes 2 y 3 de las tres parametrizaciones
   para una señal de prueba.
+  >LPCC:
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/prediccion_lpcc.JPG)
+  >MFCC
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imagenes/prediccion_mfcc.JPG)
   
   + ¿Cuál de ellas le parece que contiene más información?
 
