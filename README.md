@@ -65,30 +65,37 @@ ejercicios indicados.
   para una señal de prueba.
   >LP:
   
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lp_bona.PNG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lp_dispersion.png)
   
   >LPCC:
   
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lpcc_dispersion.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lpcc_dispersion.png)
   
   >MFCC:
   
-  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion.JPG)
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion_bo.png)
   
   + ¿Cuál de ellas le parece que contiene más información?
-  > Observando las graficas podríamos decir que LPCC y MFCC contienen más información, ya que estan menos correlados.
-
+  > Observando las graficas podríamos decir que LPCC y MFCC contienen más información ya que son una nube bastante dispersa a causa de que estan menos correlados, es decir, con una componente, nos cuesta más saber el valor de la otra.  
+  > En cambio, en el lp si que se puede deducir el valor de un coeficiente conociendo el otro y entonces, uno de ellos aporta muy poca información. 
+  > Si tuvieramos que quedarnos con una gráfica, eligiriamos el del MFCC porque es donde mayor dispersión se observa. 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3, y rellene la tabla siguiente con los valores obtenidos.
+  
+  > Para el uso del programa Pearson hemos usado este comando : pearson work/$name/BLOCK01/SES017/*$name
+  Donde $name indica si queremos lp, lpcc o mfcc
 
   |                        | LP   | LPCC | MFCC |
   |------------------------|:----:|:----:|:----:|
-  | &rho;<sub>x</sub>[2,3] |      |      |      |
+  | &rho;<sub>x</sub>[2,3] |-0.872|0.1484|0.1705|
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
-  
+  > Los coeficientes de Pearson van de [-1,1] y nos sirven para medir el nivel de correlación que hay entre una serie de datos.
+  > Los valores del Pearson nos corroboran lo que comentabamos anteriormente ya que contra más pequeño sea el valor, mayor incorrelacion en los datos. Aunque nos sorprende que el valor de LPCC sea inferior al del MFCC. 
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
-
+> El objetivo para el número de coeficientes es poder obtener los parámetros más importantes de la voz con el menor número de coeficientes. 
+> Nº de coeficientes para el LPCC entre 8 y 12
+> Nº de coeficientes para el MFCC entre 13 y 16.
 ### Entrenamiento y visualización de los GMM.
 
 Complete el código necesario para entrenar modelos GMM.
@@ -96,9 +103,18 @@ Complete el código necesario para entrenar modelos GMM.
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
   para sus dos primeros coeficientes de MFCC.
   
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses015.png)
+  
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
   del modelado GMM para diferenciar las señales de uno y otro.
+  
+  ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/ses015_ses220.png)
+  
+  > En esta imagen podemos observar, la gráfica de la funcion de densidad de los locutores SE0015 (en rojo arriba) y SE220 (en azul abajo), también se muestra la poblacion de los dos locutores. La población roja pertenece al locutor SE0015 y la azul al SE220. 
+  > Se puede apreciar notariamente la diferencia entre las funciones de densidad de los locutores ya que tienen una formba bastante distinta. 
+  > En la población las diferencias son menores pero se observa que cuando la función de densidad de un locutor es distinta a la población de este, podemos ver que muchas muestras no estan donde indica que deberia estar la función de densidad. Esto nos permite diferenciar a los locutores.
+  > También comentar que la mayor densidad de probabilidad es en la parte central inferior de las gráficas ya que corresponde a los silencios, los cuales no pertenecen a ninguno de los locutores. 
 
 ### Reconocimiento del locutor.
 
@@ -106,6 +122,16 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
 
 - Inserte una tabla con la tasa de error obtenida en el reconocimiento de los locutores de la base de datos
   SPEECON usando su mejor sistema de reconocimiento para los parámetros LP, LPCC y MFCC.
+
+  |                        | LP   | LPCC | MFCC |
+  |------------------------|:----:|:----:|:----:|
+  | Tasa de error (%)      |11.08 |3.82  |1.66  |
+  
+  > Los parámetros que hemos usado son :
+  
+  > LP = 8 coeficientes; LPCC = 8 coeficientes , 12 coef.cepstrales ; MFCC = 16 coeficientes
+  
+  > Hemos usado lo siguiente para el GMM : Thershold = 0.00001 ; Iteraciones = 40 ; Guassianas = 40 ; Método de inicialización = aleatorio
 
 ### Verificación del locutor.
 
@@ -115,6 +141,11 @@ Complete el código necesario para realizar verificación del locutor y optimice
   de verificación de SPEECON. La tabla debe incluir el umbral óptimo, el número de falsas alarmas y de
   pérdidas, y el score obtenido usando la parametrización que mejor resultado le hubiera dado en la tarea
   de reconocimiento.
+  
+            
+   > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes.
+   
+   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/cost.PNG)
  
 ### Test final y trabajo de ampliación.
 
