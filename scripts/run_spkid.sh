@@ -17,11 +17,10 @@ w=work
 name_exp=one
 db=spk_8mu/speecon
 
-nfilt_mfcc=20
 mfcc_order=16
 order_lpc=8
-order_lpcc=16
-order_lpcc_cep=20
+order_lpcc=8
+order_lpcc_cep=12
 thr=0.001
 nmixtures=8
 gmm_ini=1 
@@ -172,7 +171,7 @@ for cmd in $*; do
 	   #
 	   # - The name of the world model will be used by gmm_verify in the 'verify' command below.
         #echo $name ----
-       gmm_train  -v 1 -T 0.0001 -m 40 -m 50 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
+       gmm_train  -v 1 -T 0.0001 -m 40 -m 40 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/world.gmm $lists/verif/users_and_others.train || exit 1
         #echo
       # echo "Implement the trainworld option ..."
    elif [[ $cmd == verify ]]; then
