@@ -137,19 +137,11 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
 
 Complete el código necesario para realizar verificación del locutor y optimice sus parámetros.
 
- |           |Missed| False Alarm | Umbral | Cost Detection |
-             |------|:----:|:-----------:|:------:|:--------------:|
-             | MFCC |38/250|     1/1000  |0.623   |       25,1     |
-
 - Inserte una tabla con el *score* obtenido con su mejor sistema de verificación del locutor en la tarea
   de verificación de SPEECON. La tabla debe incluir el umbral óptimo, el número de falsas alarmas y de
   pérdidas, y el score obtenido usando la parametrización que mejor resultado le hubiera dado en la tarea
   de reconocimiento.
   
-  
- |           |Missed| False Alarm | Umbral | Cost Detection |
-             |------|:----:|:-----------:|:------:|:--------------:|
-             | MFCC |38/250|     1/1000  |0.623   |       25,1     |
             
    > El sistema de verificación del locutor que mejor nos ha funcionado es el MFCC con 16 coeficientes.
  
