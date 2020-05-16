@@ -66,8 +66,11 @@ ejercicios indicados.
   >LP:
   
   >LPCC:
+  
   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/lpcc_dispersion.JPG)
+  
   >MFCC:
+  
   ![](https://github.com/davilin98/P4/blob/Guardia-Linde/imatges/mfcc_dispersion.JPG)
   
   + ¿Cuál de ellas le parece que contiene más información?
