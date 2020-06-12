@@ -19,8 +19,8 @@ db=spk_8mu/speecon
 
 mfcc_order=16
 order_lpc=8
-order_lpcc=8
-order_lpcc_cep=12
+order_lpcc=16
+order_lpcc_cep=20
 thr=0.001
 nmixtures=8
 gmm_ini=1 
