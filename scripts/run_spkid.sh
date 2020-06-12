@@ -205,7 +205,8 @@ for cmd in $*; do
 
      for filename in $(cat $lists/final/class.train $lists/final/class.test); do
             mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
-            EXEC="wav2mfcc  $mfcc_order spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
+           # EXEC="wav2mfcc  $mfcc_order spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
+            EXEC="wav2lpcc  $order_lpcc $order_lpcc_cep spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
             echo $EXEC && $EXEC || exit 1
         done
 
@@ -221,7 +222,8 @@ for cmd in $*; do
        
    for filename in $(cat $lists/final/verif.test); do
             mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
-            EXEC="wav2mfcc $mfcc_order spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
+           # EXEC="wav2mfcc $mfcc_order spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
+            EXEC="wav2lpcc  $order_lpcc $order_lpcc_cep spk_8mu/sr_test/$filename.wav $w/$FEAT/$filename.$FEAT"
             echo $EXEC && $EXEC || exit 1
         done
 
